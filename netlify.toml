@@ -1,0 +1,21 @@
+# Netlify settings for the internal team demo only.
+# The graded deployment is Cloud Run through GitLab CI (Deliverable 1.3).
+
+[build]
+  command = "npm ci && npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# React Router handles every path, including the 404 page
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Keep the demo out of search engines
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
