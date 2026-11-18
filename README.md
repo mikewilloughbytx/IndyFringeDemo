@@ -16,7 +16,7 @@ The public website for the fictional **IndyFringe 2027** festival (Aug 12–22, 
 ## Live site
 
 - Website: _TODO: Cloud Run URL after the first pipeline deploy_
-- Internal team demo (not graded): Netlify, built from GitHub `mikewilloughbytx/IndyFringeDemo` using `netlify.toml`. _TODO: add the Netlify URL._
+- Internal team demo (not graded): https://indyfringedemo.netlify.app/ (Netlify, built from GitHub `mikewilloughbytx/IndyFringeDemo` using `netlify.toml`)
 - API: _TODO: festival-api Cloud Run URL_
 
 ## Run it locally
