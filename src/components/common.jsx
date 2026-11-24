@@ -28,8 +28,15 @@ export function EmptyState({ title, children }) {
 }
 
 /* Loading and error states for every data-driven page (WEB-2.1.5) */
-export function DataGate({ loading, error, children }) {
-  if (error) return <EmptyState title="Something went wrong"><p>We couldn't load the festival program. Refresh the page or try again in a minute.</p></EmptyState>;
+export function DataGate({ loading, error, onRetry, children }) {
+  if (error) return (
+    <div role="alert">
+      <EmptyState title="Something went wrong">
+        <p>We couldn't load the festival program. Check your connection and try again.</p>
+        {onRetry && <button type="button" className="btn btn-small" onClick={onRetry}>Retry</button>}
+      </EmptyState>
+    </div>
+  );
   if (loading) return <p className="result-count" role="status">Loading the program…</p>;
   return children;
 }

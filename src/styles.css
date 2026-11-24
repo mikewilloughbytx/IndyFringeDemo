@@ -96,6 +96,13 @@ p { margin: 0 0 .75rem; }
 .brand { text-decoration: none; display: flex; align-items: baseline; gap: .4rem; }
 .brand-mark { font-family: var(--font-hand); font-size: 2rem; line-height: 1; color: var(--amber); }
 .brand-year { font-family: var(--font-display); font-size: 1rem; letter-spacing: .12em; }
+.brand { flex-wrap: wrap; column-gap: .4rem; row-gap: 0; }
+.brand-dates { font-size: .85rem; color: var(--paper); opacity: .85; white-space: nowrap; }
+/* Phones: dates drop under the logo so the Menu button stays beside it */
+@media (max-width: 599px) {
+  .brand { flex: 1 1 0; min-width: 0; }
+  .brand-dates { width: 100%; }
+}
 .menu-toggle {
   display: flex; align-items: center; gap: .5rem; background: none; border: 2px solid var(--paper);
   color: var(--paper); border-radius: 6px; padding: .35rem .7rem; font: inherit; cursor: pointer;
@@ -194,8 +201,9 @@ p { margin: 0 0 .75rem; }
   background: var(--paper-2); border: 2px solid var(--rule); border-radius: var(--radius); padding: 1rem; margin-bottom: 1rem; }
 .filters .field { display: flex; flex-direction: column; gap: .25rem; }
 @media (min-width: 800px) { .filters { grid-template-columns: repeat(3, 1fr) auto auto; } }
+.filters .field-search { grid-column: 1 / -1; }
 label { font-weight: 600; font-size: .95rem; }
-select, input[type="text"], input[type="email"], input[type="password"], input[type="number"], textarea {
+select, input[type="text"], input[type="search"], input[type="email"], input[type="password"], input[type="number"], textarea {
   font: inherit; color: var(--ink); background: #fff; border: 2px solid var(--ink-2); border-radius: 6px; padding: .5rem .6rem; width: 100%;
 }
 .check { display: flex; align-items: center; gap: .5rem; font-weight: 600; }
@@ -219,6 +227,10 @@ select, input[type="text"], input[type="email"], input[type="password"], input[t
 .perf-row p { margin: 0 0 .2rem; }
 .perf-when { font-weight: 700; }
 .perf-access { font-size: .9rem; color: var(--ink-2); }
+.perf-day { font-size: 1.1rem; text-transform: uppercase; margin: 1.25rem 0 .25rem; }
+.panel-field { display: flex; flex-direction: column; gap: .25rem; margin-bottom: .5rem; }
+.venue-name a { color: inherit; }
+.section-links { margin: 0; }
 
 /* ---------- 12. Schedule: dusk band + color-coded grid ---------- */
 .dusk-band { background: var(--dusk); color: var(--dusk-ink); padding: 2rem 0 1.5rem; }

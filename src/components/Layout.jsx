@@ -12,7 +12,9 @@ const NAV_LINKS = [
   { to: "/venues", label: "Venues" },
   { to: "/first-time", label: "First time?" },
   { to: "/about", label: "About" },
-  { to: "/signin", label: "Sign in" }
+  // Sign-in isn't functional until 1.7, so both links show for now (WEB-2.1.1)
+  { to: "/signin", label: "Sign in" },
+  { to: "/my-reservations", label: "My reservations" }
 ];
 
 function Header() {
@@ -25,8 +27,9 @@ function Header() {
   return (
     <header className="site-header">
       <div className="container header-inner">
-        <Link className="brand" to="/" aria-label="IndyFringe 2027 home">
+        <Link className="brand" to="/" aria-label="IndyFringe 2027, August 12–22, 2027, home">
           <span className="brand-mark">IndyFringe</span><span className="brand-year">2027</span>
+          <span className="brand-dates">· August 12–22, 2027</span>
         </Link>
         <button className="menu-toggle" aria-expanded={open} aria-controls="primary-nav" onClick={() => setOpen(o => !o)}>
           <span className="menu-bars" aria-hidden="true"></span><span className="menu-label">Menu</span>

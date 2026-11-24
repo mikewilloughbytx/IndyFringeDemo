@@ -20,6 +20,7 @@ export default function ShowCard({ show, company, firstPerformance, headingLevel
           {isFamilyFriendly(show) && <span className="genre-tag family">Family friendly</span>}
         </p>
         {venueId && <p className="ticket-venue"><VenueChip venueId={venueId} /></p>}
+        <p className="price-note">${show.ticket_price} · for information only</p>
       </div>
     </article>
   );

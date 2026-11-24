@@ -8,6 +8,7 @@ import Shows from "./pages/Shows.jsx";
 import ShowDetail from "./pages/ShowDetail.jsx";
 import Schedule from "./pages/Schedule.jsx";
 import Venues from "./pages/Venues.jsx";
+import VenueDetail from "./pages/VenueDetail.jsx";
 import SignIn from "./pages/SignIn.jsx";
 import MyReservations from "./pages/MyReservations.jsx";
 import ReserveTickets from "./pages/ReserveTickets.jsx";
@@ -24,6 +25,7 @@ export default function App() {
         <Route path="shows/:showId" element={<ShowDetail />} />
         <Route path="schedule" element={<Schedule />} />
         <Route path="venues" element={<Venues />} />
+        <Route path="venues/:venueId" element={<VenueDetail />} />
         <Route path="signin" element={<SignIn />} />
         <Route path="my-reservations" element={<MyReservations />} />
         <Route path="reserve" element={<ReserveTickets />} />

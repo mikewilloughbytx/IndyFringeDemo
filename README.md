@@ -48,7 +48,7 @@ npm run preview
 | `src/api/festivalApi.js` | The only place pages get data from; swap sample data for API calls here |
 | `src/data/sampleData.js` | Sample rows with the same field names as the BigQuery tables |
 | `src/lib/festival.js` | Venue colors, family-friendly rule, seats available, date and time formatting |
-| `src/pages/` | Home, Shows, Show detail, Schedule, Venues, Sign in, My reservations, Reserve tickets, About, First time, 404 |
+| `src/pages/` | Home, Shows, Show detail, Schedule, Venues, Venue detail, Sign in, My reservations, Reserve tickets, About, First time, 404 |
 | `src/styles.css` | All styles, mobile first |
 
 ### Design

@@ -27,14 +27,22 @@ async function loadFestival() {
    performances → shows → venues the same way the SQL will. */
 export function useFestivalData() {
   const [state, setState] = useState({ data: null, error: null });
+  const [attempt, setAttempt] = useState(0);
 
   useEffect(() => {
     let alive = true;
     loadFestival()
       .then(data => alive && setState({ data, error: null }))
-      .catch(error => alive && setState({ data: null, error }));
+      .catch(error => {
+        // Details go to the console for developers; visitors see a friendly message (WEB-2.1.5)
+        console.error("Could not load festival data", error);
+        if (alive) setState({ data: null, error });
+      });
     return () => { alive = false; };
-  }, []);
+  }, [attempt]);
+
+  // Called by the Retry button: show the loading state again, then reload
+  const retry = () => { setState({ data: null, error: null }); setAttempt(a => a + 1); };
 
   const lookups = useMemo(() => {
     if (!state.data) return null;
@@ -50,6 +58,7 @@ export function useFestivalData() {
   return {
     loading: !state.data && !state.error,
     error: state.error,
+    retry,
     ...(state.data || {}),
     ...(lookups || {})
   };

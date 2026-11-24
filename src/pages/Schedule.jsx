@@ -36,7 +36,7 @@ export default function Schedule() {
 
       {/* ===== Grid ===== */}
       <section className="container" aria-labelledby="day-heading">
-        <DataGate loading={fest.loading} error={fest.error}>
+        <DataGate loading={fest.loading} error={fest.error} onRetry={fest.retry}>
           {fest.performances && <DayGrid fest={fest} day={day} familyOnly={familyOnly} />}
         </DataGate>
       </section>

@@ -13,7 +13,7 @@ export default function ShowDetail() {
 
   return (
     <div className="container">
-      <DataGate loading={fest.loading} error={fest.error}>
+      <DataGate loading={fest.loading} error={fest.error} onRetry={fest.retry}>
         {!show ? (
           <div style={{ paddingBottom: "3rem" }}>
             <PageHeader title="Show not found" />
@@ -38,6 +38,13 @@ function ShowBody({ show, fest }) {
         <div>
           <h1 className="page-title">{show.title}</h1>
           <p className="lede">{company?.name} · {company?.hometown}</p>
+          <p className="price-note">
+            {company?.website ? (
+              <a href={company.website} target="_blank" rel="noopener noreferrer">
+                {company.name} website<span className="visually-hidden"> (opens in a new tab)</span>
+              </a>
+            ) : "Company website not listed yet."}
+          </p>
           <p className="ticket-meta">
             <span className="genre-tag">{show.genre}</span>
             <span className="genre-tag">{show.age_rating}</span>

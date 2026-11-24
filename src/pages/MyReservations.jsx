@@ -17,7 +17,7 @@ export default function MyReservations() {
         <p className="lede">Your reservation history. New reservations made in this demo are confirmed but not saved, so they won't appear here.</p>
       </header>
 
-      <DataGate loading={fest.loading} error={fest.error}>
+      <DataGate loading={fest.loading} error={fest.error} onRetry={fest.retry}>
         <div className="res-list">
           {fest.reservations?.length ? fest.reservations.map(r => {
             const p = fest.performanceById[r.performance_id];

@@ -11,6 +11,7 @@ export default function NotFound() {
       <p>We couldn't find that page. It may have moved, or the link may be wrong.</p>
       <div className="hero-ctas">
         <Link className="btn btn-cta" to="/">Back to home</Link>
+        <Link className="btn btn-ghost-light" to="/shows">Browse shows</Link>
         <Link className="btn btn-ghost-light" to="/schedule">See the schedule</Link>
       </div>
       <Treeline />

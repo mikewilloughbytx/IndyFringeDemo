@@ -37,9 +37,11 @@ export default function Home() {
         <div className="container">
           <div className="section-head">
             <h2 id="featured-title" className="section-title">Featured shows</h2>
-            <Link to="/shows">All shows</Link>
+            <p className="section-links">
+              <Link to="/shows">All shows</Link> · <Link to="/shows?family=true">Family friendly shows</Link>
+            </p>
           </div>
-          <DataGate loading={fest.loading} error={fest.error}>
+          <DataGate loading={fest.loading} error={fest.error} onRetry={fest.retry}>
             <div className="card-grid">
               {fest.showById && FEATURED.map(id => fest.showById[id]).filter(Boolean).map(show => (
                 <ShowCard key={show.show_id} show={show}
